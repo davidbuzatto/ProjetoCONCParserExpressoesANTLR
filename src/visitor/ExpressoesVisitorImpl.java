@@ -87,17 +87,17 @@ public class ExpressoesVisitorImpl extends ExpressoesBaseVisitor<Number> {
     
     @Override
     public Number visitFatorDec( ExpressoesParser.FatorDecContext ctx ) {
-        return Double.valueOf( ctx.getChild( 0 ).getText() );
+        return Double.valueOf( ctx.DEC().getText() );
     }
 
     @Override
     public Number visitFatorInt( ExpressoesParser.FatorIntContext ctx ) {
-        return Integer.valueOf( ctx.getChild( 0 ).getText() );
+        return Integer.valueOf( ctx.INT().getText() );
     }
 
     @Override
     public Number visitFatorParenteses( ExpressoesParser.FatorParentesesContext ctx ) {
-        return visit( ctx.getChild( 1 ) );
+        return visit( ctx.expressao() );
     }
     
 }
